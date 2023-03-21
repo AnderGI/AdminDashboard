@@ -7,6 +7,7 @@ html {
   height: 100vh;
   --asideRed: #dc2626;
   --navWhite: #fbfbfb;
+  --borderBlack: rgba(0, 0, 0, 0.1);
 }
 body {
   height: 100%;
@@ -84,6 +85,7 @@ body > aside + main nav {
   grid-template-rows: fit-content;
   align-items: center;
   background-color: var(--navWhite);
+  box-shadow: 0em 0.05em 0.1em 0.05em var(--borderBlack);
 }
 
 body > aside + main nav div:nth-child(1),
@@ -100,7 +102,7 @@ body > aside + main nav div:nth-child(1) img {
   justify-self: end;
 }
 body > aside + main nav div:nth-child(2) div {
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--borderBlack);
   border-radius: 2em;
   padding: 0.25em 1em;
   box-shadow: 0em 0em 0.1em 0.05em rgba(0, 0, 0, 0.1);
@@ -132,4 +134,50 @@ body > aside + main nav section img {
   grid-row-end: 3;
   width: 3em;
   justify-self: end;
+}
+
+/*MENU DATA CONTENT*/
+section#dataContainer {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-auto-flow: column;
+  column-gap: 1em;
+  padding: 2em 0em;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+section#dataContainer section {
+  border: 1px solid var(--borderBlack);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5em;
+  padding: 2em 3em;
+  background-color: var(--navWhite);
+  box-shadow: 0em 0em 0.25em 0.01em var(--borderBlack);
+}
+
+section#dataContainer section:hover {
+  background-color: var(--asideRed);
+}
+section#dataContainer section img {
+  opacity: 1;
+  width: 3em;
+  grid-column: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+section#dataContainer section p {
+  grid-column: 1;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+section#dataContainer section p span {
+  font-weight: 900;
+  font-size: 2rem;
 }
